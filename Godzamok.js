@@ -1,6 +1,4 @@
-var godzamokInterval = setInterval(setGodzamokInterval, 100);
-
-function setGodzamokInterval() {
+setInterval(function() {
 	if
 	(
 		!Game.hasBuff('Devastation')
@@ -36,9 +34,9 @@ function setGodzamokInterval() {
 	) {
 		sellAndRebuy();
 	}
-}
+}, 100)
 
-function sellAndRebuy () {
+function sellAndRebuy() {
 	var buildings = [0, 2, 3, 4, 5, 6];
 
 	buildings.forEach((building, index) => {
