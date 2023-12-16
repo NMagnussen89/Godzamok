@@ -10,8 +10,8 @@ setInterval(function() {
 		Game.hasBuff('Frenzy').visible == true
 		&&
 		(
-			Game.hasBuff('Elder Frenzy').visible == true || 
-			Game.hasBuff('Click Frenzy'.visible == true) || 
+			Game.hasBuff('Elder frenzy').visible == true || 
+			Game.hasBuff('Click frenzy'.visible == true) || 
 			Game.hasBuff('Dragonflight').visible == true
 		)
 		&&
