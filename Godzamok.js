@@ -1,5 +1,10 @@
 setInterval(function() {
 	if
+	(Game.TickerEffect && Game.TickerEffect.type == 'fortune') {
+			Game.tickerL.click();
+	}
+	
+	if
 	(
 		!Game.hasBuff('Devastation')
 		&&
