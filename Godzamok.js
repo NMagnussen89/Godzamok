@@ -5,35 +5,35 @@ setInterval(function() {
 	
 	if
 	(
-		!Game.hasBuff('Devastation').visible == true
+		!Game.hasBuff('Devastation')
 		&&
-		Game.hasBuff('Frenzy').visible == true
+		Game.hasBuff('Frenzy')
 		&&
 		(
-			Game.hasBuff('Elder frenzy').visible == true || 
-			Game.hasBuff('Click frenzy'.visible == true) || 
-			Game.hasBuff('Dragonflight').visible == true
+			Game.hasBuff('Elder frenzy') || 
+			Game.hasBuff('Click frenzy') || 
+			Game.hasBuff('Dragonflight')
 		)
 		&&
 		(
-			Game.hasBuff('High-five').visible == true || 
-			Game.hasBuff('Congregation').visible == truev || 
-			Game.hasBuff('Luxuriant harvest').visible == true || 
-			Game.hasBuff('Ore vein').visible == true || 
-			Game.hasBuff('Oiled-up').visible == true || 
-			Game.hasBuff('Juicy profits').visible == true || 
-			Game.hasBuff('Fervent adoration').visible == true || 
-			Game.hasBuff('Manabloom').visible == true || 
-			Game.hasBuff('Delicious lifeforms').visible == true || 
-			Game.hasBuff('Breakthrough').visible == true || 
-			Game.hasBuff('Righteous cataclysm').visible == true || 
-			Game.hasBuff('Golden ages').visible == true || 
-			Game.hasBuff('Extra cycles').visible == true || 
-			Game.hasBuff('Solar flare').visible == true || 
-			Game.hasBuff('Winning streak').visible == true || 
-			Game.hasBuff('Macrocosm').visible == true || 
-			Game.hasBuff('Refactoring').visible == true || 
-			Game.hasBuff('Cosmic nursery').visible == true
+			Game.hasBuff('High-five') || 
+			Game.hasBuff('Congregation') || 
+			Game.hasBuff('Luxuriant harvest') || 
+			Game.hasBuff('Ore vein') || 
+			Game.hasBuff('Oiled-up') || 
+			Game.hasBuff('Juicy profits') || 
+			Game.hasBuff('Fervent adoration') || 
+			Game.hasBuff('Manabloom') || 
+			Game.hasBuff('Delicious lifeforms') || 
+			Game.hasBuff('Breakthrough') || 
+			Game.hasBuff('Righteous cataclysm') || 
+			Game.hasBuff('Golden ages') || 
+			Game.hasBuff('Extra cycles') || 
+			Game.hasBuff('Solar flare') || 
+			Game.hasBuff('Winning streak') || 
+			Game.hasBuff('Macrocosm') || 
+			Game.hasBuff('Refactoring') || 
+			Game.hasBuff('Cosmic nursery')
 		)
 	) {
 		sellAndRebuy();
@@ -41,6 +41,7 @@ setInterval(function() {
 }, 100)
 
 function sellAndRebuy() {
+	console.log('Called sellAndRebuy');
 	var buildings = [0, 2, 3, 4, 5, 6];
 
 	buildings.forEach((building, index) => {
@@ -57,6 +58,7 @@ function sellAndRebuy() {
 			l('storeBulk100').click();
 			
 			for (var i = 0; i < bulk; i++) {
+				console.log('Started selling: ' + Game.ObjectsById[buildings[index]].name);
 				Game.ObjectsById[buildings[index]].sell;
 			}
 			
@@ -64,6 +66,7 @@ function sellAndRebuy() {
 			l('storeBulk100').click();
 			
 			for (var i = 0; i < bulk; i++) {
+				console.log('Started buying: ' + Game.ObjectsById[buildings[index]].name);
 				Game.ObjectsById[buildings[index]].buy;
 			}
 		}
