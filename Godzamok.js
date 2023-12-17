@@ -1,4 +1,6 @@
 setInterval(function() {
+	const wait = (n) => new Promise((resolve) => setTimeout(resolve, n));
+	
 	if (Game.TickerEffect && Game.TickerEffect.type == 'fortune') {
 			Game.tickerL.click();
 	}
@@ -61,6 +63,8 @@ function sellAndRebuy() {
 				console.log('Started selling: ' + Game.ObjectsById[buildings[index]].name);
 				Game.ObjectsById[buildings[index]].sell;
 			}
+
+			await wait(10000);
 			
 			l('storeBulkBuy').click();
 			l('storeBulk100').click();
