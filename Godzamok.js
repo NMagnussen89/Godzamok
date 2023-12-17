@@ -36,7 +36,7 @@ setInterval(function() {
 			Game.hasBuff('Cosmic nursery')
 		)
 	) {
-		sellAndRebuy();
+		await sellAndRebuy();
 	}
 }, 100)
 
@@ -64,7 +64,7 @@ async function sellAndRebuy() {
 				Game.ObjectsById[buildings[index]].sell;
 			}
 
-			await wait(10000);
+			await wait(15000);
 			
 			l('storeBulkBuy').click();
 			l('storeBulk100').click();
