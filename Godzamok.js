@@ -1,5 +1,3 @@
-const wait = (n) => new Promise((resolve) => setTimeout(resolve, n));
-
 setInterval(function() {
 	if (Game.TickerEffect && Game.TickerEffect.type == 'fortune') {
 			Game.tickerL.click();
@@ -42,7 +40,9 @@ setInterval(function() {
 	}
 }, 100)
 
-function sellAndRebuy() {
+async function sellAndRebuy() {
+	const wait = (n) => new Promise((resolve) => setTimeout(resolve, n));
+	
 	console.log('Called sellAndRebuy');
 	var buildings = [0, 2, 3, 4, 5, 6];
 
