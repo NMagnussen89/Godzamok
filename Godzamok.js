@@ -10,12 +10,12 @@ setInterval(function() {
 		Game.hasBuff('Frenzy')
 		&&
 		(
-			Game.hasBuff('Elder frenzy') || 
 			Game.hasBuff('Click frenzy') || 
 			Game.hasBuff('Dragonflight')
 		)
 		&&
 		(
+			Game.hasBuff('Elder frenzy') ||
 			Game.hasBuff('High-five') || 
 			Game.hasBuff('Congregation') || 
 			Game.hasBuff('Luxuriant harvest') || 
