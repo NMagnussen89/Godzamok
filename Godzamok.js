@@ -53,19 +53,13 @@ function sellAndRebuy() {
 				bulk = 6;
 			}
 			
-			l('storeBulkSell').click();
-			l('storeBulk100').click();
-			
 			for (var i = 0; i < bulk; i++) {
-				Game.ObjectsById[buildings[index]].sell;
+				Game.ObjectsById[buildings[index]].sell(100);
 			}
 
 			setTimeout(() => {
-				l('storeBulkBuy').click();
-				l('storeBulk100').click();
-			
 				for (var i = 0; i < bulk; i++) {
-					Game.ObjectsById[buildings[index]].buy;
+					Game.ObjectsById[buildings[index]].buy(100);
 				}
 			}, 15000)
 		}
