@@ -1,4 +1,4 @@
-setInterval(async function() {
+setInterval(function() {
 	if (Game.TickerEffect && Game.TickerEffect.type == 'fortune') {
 			Game.tickerL.click();
 	}
@@ -36,14 +36,11 @@ setInterval(async function() {
 			Game.hasBuff('Cosmic nursery')
 		)
 	) {
-		await sellAndRebuy();
+		sellAndRebuy();
 	}
 }, 100)
 
-async function sellAndRebuy() {
-	const wait = (n) => new Promise((resolve) => setTimeout(resolve, n));
-	
-	console.log('Called sellAndRebuy');
+function sellAndRebuy() {
 	var buildings = [0, 2, 3, 4, 5, 6];
 
 	buildings.forEach((building, index) => {
@@ -60,19 +57,17 @@ async function sellAndRebuy() {
 			l('storeBulk100').click();
 			
 			for (var i = 0; i < bulk; i++) {
-				console.log('Started selling: ' + Game.ObjectsById[buildings[index]].name);
 				Game.ObjectsById[buildings[index]].sell;
 			}
 
-			await wait(15000);
+			setTimeout(() => {
+				l('storeBulkBuy').click();
+				l('storeBulk100').click();
 			
-			l('storeBulkBuy').click();
-			l('storeBulk100').click();
-			
-			for (var i = 0; i < bulk; i++) {
-				console.log('Started buying: ' + Game.ObjectsById[buildings[index]].name);
-				Game.ObjectsById[buildings[index]].buy;
-			}
+				for (var i = 0; i < bulk; i++) {
+					Game.ObjectsById[buildings[index]].buy;
+				}
+			}, 15000)
 		}
 	});
 }
