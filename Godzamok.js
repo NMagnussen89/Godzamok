@@ -1,4 +1,4 @@
-setInterval(function() {
+setInterval(async function() {
 	if (Game.TickerEffect && Game.TickerEffect.type == 'fortune') {
 			Game.tickerL.click();
 	}
