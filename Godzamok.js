@@ -2,6 +2,12 @@ setInterval(function() {
 	if (Game.TickerEffect && Game.TickerEffect.type == 'fortune') {
 			Game.tickerL.click();
 	}
+
+	Game.shimmers.forEach(function(shimmer) {
+		if (shimmer.type == 'reindeer') {
+			shimmer.pop();
+		}
+	});
 	
 	if
 	(
